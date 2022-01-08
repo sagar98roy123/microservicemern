@@ -13,7 +13,7 @@ app.get('/posts/:id/comments',(req,res)=>{
         //const postId= data.postId;
         
         if(data.postId==req.params.id){
-            resContent.push(data.content);
+            resContent.push({id:data.id,postId:data.postId,content:data.content});
         }
     })
     res.send(resContent);
