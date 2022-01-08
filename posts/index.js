@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 app.use(bodyParser.json());
 
-const posts = {};
+const posts = [];
 
 app.get('/posts',(req,res)=>{
     res.send(posts);
@@ -13,9 +13,10 @@ app.get('/posts',(req,res)=>{
 
 app.post("/posts",(req,res)=>{
     const id = randomBytes(4).toString('hex');
-    const title = req.body;
-    posts[id]= {id,title};
-    res.status(201).send({message:"Post successfully added",post:posts[id]});
+    const title = req.body.title;
+    //console.log(req.body);
+    posts.push({id,title});
+    res.status(201).send({message:"Post successfully added",post:title});
 });
 
 app.listen(4000,()=>{
