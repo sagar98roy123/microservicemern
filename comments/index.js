@@ -12,14 +12,11 @@ const commentsByPostId =[];
 app.get('/posts/:id/comments',(req,res)=>{
     const resContent= [];
     commentsByPostId.forEach(data=>{
-        //const postId= data.postId;
-        
         if(data.postId==req.params.id){
             resContent.push({id:data.id,postId:data.postId,content:data.content});
         }
     })
     res.send(resContent);
-    //res.status(201).send()
 });
 
 app.post("/posts/:id/comments",(req,res)=>{
