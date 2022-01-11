@@ -21,6 +21,6 @@ app.post("/posts",(req,res)=>{
     res.status(201).send({message:"Post successfully added",post:title});
 });
 
-app.listen(4000,()=>{
-    console.log("Listening on 4000");
+app.listen(5000,()=>{
+    console.log("Listening on 5000");
 })

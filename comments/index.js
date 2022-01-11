@@ -28,6 +28,6 @@ app.post("/posts/:id/comments",(req,res)=>{
     res.send(content);
 });
 
-app.listen(4001,()=>{
-    console.log("Listening on 4001");
+app.listen(5001,()=>{
+    console.log("Listening on 5001");
 });
